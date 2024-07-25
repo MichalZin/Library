@@ -1,0 +1,12 @@
+form {
+    display: grid;
+    width: 20%;
+    padding: 10px;
+    gap: 10px;
+    grid-template: 1fr 1fr /1fr 1fr;
+    border: 2px solid black;
+}
+#bookList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
