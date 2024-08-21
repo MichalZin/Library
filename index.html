@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="script.js" defer></script>
+    <button class="submitForm">Add book</button>
+
+            <dialog class="addBook">
+                <form>
+                    <div>
+                        <p>Author</p>
+                        <input type="text" class="bookAuthorSubmit">
+                        <p>Title</p>
+                        <input type="text" class="bookTitleSubmit">
+                        <p>Number of pages</p>               
+                        <input type="number" class="bookPageCountSubmit">
+                        <p>Read status</p>
+                        <input type="radio" name="read" class="bookReadSubmit" value = "Yes">Yes
+                        <input type="radio" name="read" class="bookReadSubmit" value = "No">No
+
+
+                    </div>
+                    <div>
+                        <button class="submitBook">Add Book</button>
+                    </div>
+                    
+
+                    <button class="closeDialog">Close</button>
+                    
+                </form>
+            </dialog>
+    
+    <div class="bookShelf">
+        <div class="book">
+            <p class="bookAuthor">J.R.R. Tolkien</p>
+            <p class="bookTitle">Hobbit</p>
+            <p class="bookPageCount">320</p>
+            <p class="bookRead">Yes</p>
+        </div>
+    
+    </div>
+</body>
+</html>
