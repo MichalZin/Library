@@ -37,7 +37,7 @@ function addBookToLibrary() {
 
     const bookCard = document.createElement('div');
     bookCard.classList.add("book");
-    bookShelf.appendChild(bookCard);
+    
 
     const bookAuthorEntry = document.createElement('p');
     //bookAuthorEntry.classList.add("bookAuthor")
@@ -51,16 +51,17 @@ function addBookToLibrary() {
 
     const bookReadEntry = document.createElement('p');
     bookReadEntry.textContent = `${bookNew.read}`;
-
-
-
+    
     bookCard.appendChild(bookAuthorEntry);
     bookCard.appendChild(bookTitleEntry);
     bookCard.appendChild(bookPagesEntry);
     bookCard.appendChild(bookReadEntry);
 
-    console.log(bookNew.author);
-    console.log(bookNew.read)
+    bookShelf.appendChild(bookCard);
+
+    
+
+
   // do stuff here
 
 }
