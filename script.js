@@ -21,6 +21,31 @@ function Book(author, title, pages, read) {
     this.pages = pages;
     this.read = read;
     
+    this.addCard = function() {
+      const bookCard = document.createElement('div');
+      bookCard.classList.add("book");
+      
+  
+      const bookAuthorEntry = document.createElement('p');
+      bookAuthorEntry.textContent = `${this.author}`
+  
+      const bookTitleEntry = document.createElement('p');
+      bookTitleEntry.textContent = `${this.title}`;
+  
+      const bookPagesEntry = document.createElement('p');
+      bookPagesEntry.textContent = `${this.pages}`
+  
+      const bookReadEntry = document.createElement('p');
+      bookReadEntry.textContent = `${this.read}`;
+      
+      bookCard.appendChild(bookAuthorEntry);
+      bookCard.appendChild(bookTitleEntry);
+      bookCard.appendChild(bookPagesEntry);
+      bookCard.appendChild(bookReadEntry);
+
+      return bookCard
+
+    }
   // the constructor...
 }
 
@@ -33,31 +58,12 @@ function addBookToLibrary() {
     const bookRead = document.querySelector(".bookReadSubmit").value;
     const bookShelf = document.querySelector(".bookShelf");
     const bookNew = new Book (bookAuthor, bookTitle, bookPage, bookRead);
+          myLibrary.push(bookNew);
 
+          const bookCard = bookNew.addCard();
 
-    const bookCard = document.createElement('div');
-    bookCard.classList.add("book");
-    
+          bookShelf.appendChild(bookCard);
 
-    const bookAuthorEntry = document.createElement('p');
-    //bookAuthorEntry.classList.add("bookAuthor")
-    bookAuthorEntry.textContent = `${bookNew.author}`
-
-    const bookTitleEntry = document.createElement('p');
-    bookTitleEntry.textContent = `${bookNew.title}`;
-
-    const bookPagesEntry = document.createElement('p');
-    bookPagesEntry.textContent = `${bookNew.pages}`
-
-    const bookReadEntry = document.createElement('p');
-    bookReadEntry.textContent = `${bookNew.read}`;
-    
-    bookCard.appendChild(bookAuthorEntry);
-    bookCard.appendChild(bookTitleEntry);
-    bookCard.appendChild(bookPagesEntry);
-    bookCard.appendChild(bookReadEntry);
-
-    bookShelf.appendChild(bookCard);
 
     
 
@@ -70,4 +76,5 @@ submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     addBookToLibrary();
     submitDialog.close()
+    console.log(myLibrary);
 });
